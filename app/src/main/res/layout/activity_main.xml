@@ -67,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:background="@null"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:hint="Search"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
@@ -84,7 +85,8 @@
                 android:src="@drawable/ic_baseline_search_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorPrimary" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -93,7 +95,8 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -282,26 +285,18 @@
 
     </ScrollView>
 
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
-
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/white"
-            app:itemIconTint="#FF00B09B"
-            app:itemTextColor="#FF00B09B"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-            app:menu="@menu/menu_bottom_navigation" />
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:itemIconTint="#FF00B09B"
+        app:itemTextColor="#FF00B09B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_bottom_navigation" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
